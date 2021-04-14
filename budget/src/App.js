@@ -13,16 +13,16 @@ function App() {
   function deleteEntry(id){
     const result = entries.filter(entry => entry.id !== id);
     setEntries(result);
-
   }
 
-  function addEntry(description, value){
-    const result = entries.concat({id: entries.length+1, description, value});
-    setEntries(result)
+  function addEntry(description, value, isExpense){
+    const result = entries.concat({id: entries.length+1, description, value, isExpense});
+    setEntries(result);
   }
+  
   return (
    <Container>
-     <MainHeader title='Budget'/>
+     <MainHeader title='Budget Calculator'/>
      <DisplayBalance title='Your Balance' value='25,345.00' size='small'/>
 
      <DisplayBalances/>
